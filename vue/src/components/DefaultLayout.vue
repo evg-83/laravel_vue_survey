@@ -60,7 +60,7 @@
                     <MenuItem>
                       <a
                         @click="logout"
-                        :class="['block px-4 py-2 text-sm text-gray-700']"
+                        :class="['block px-4 py-2 text-sm text-gray-700 cursor-pointer']"
                         >Sign out</a
                       >
                     </MenuItem>
@@ -70,6 +70,7 @@
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
+
             <!-- Mobile menu button -->
             <DisclosureButton
               class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -145,6 +146,7 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { useStore } from "vuex";
 import { computed } from "vue";
+import {useRouter} from 'vue-router'
 
 const navigation = [
   { name: "Dashboard", to: { name: "Dashboard" } },
@@ -167,11 +169,19 @@ export default {
   },
   setup() {
     const store = useStore();
-    // const router = useRouter();
+    const router = useRouter();
+
+    function logout() {
+      store.commit('logout')
+      router.push({
+        name: 'Login'
+      })
+    }
 
     return {
       user: computed(() => store.state.user.data),
       navigation,
+      logout,
     };
   },
 };
