@@ -11,6 +11,14 @@
       >
         Sign in to your account
       </h2>
+      <div class="text-center">
+        <router-link
+          :to="{ name: 'Register' }"
+          class="font-medium text-indigo-600 hover:text-indigo-500"
+        >
+          register for free
+        </router-link>
+      </div>
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
