@@ -7,7 +7,7 @@ const tmpSurveys = [
     title: "EvgCodeholic content",
     slug: "evgcodeholic-content",
     status: "draft",
-    image: "multfilm_Futurama_Bender_14573.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/ru/thumb/a/a6/Bender_Rodriguez.png/150px-Bender_Rodriguez.png",
     description: "My name is Gru.<br>I`m developer in start way.",
     created_at: "2023-05-16 23:07:00",
     updated_at: "2023-05-16 23:07:00",
